@@ -30,12 +30,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let configuration = ARWorldTrackingConfiguration()
         
         //Specify reference image: 
-        if  let imageToTrack = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: Bundle.main) {
-            /*Set the configuration's detectionImages as the unwrapped imageToTrack (NOTE: this allows the app to track images as well as detect planes):
-            */
-            configuration.detectionImages = imageToTrack
+        if  let imagesToTrack = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: Bundle.main) {
+            //Set images to detect:
+            configuration.detectionImages = imagesToTrack
             
-            //Sets the max amount of images that can be tracked:
+            //Set the max amount of images that can be tracked:
             configuration.maximumNumberOfTrackedImages = 1
             
             print("Images successfully added to application.")
@@ -53,6 +52,54 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
 
     // MARK: - ARSCNViewDelegate
+    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+        let node = SCNNode()
+        
+        //Check to see if the anchor detected is in fact an image:
+        if let imageAnchor = anchor as? ARImageAnchor {
+            //Print the detected image name to the console:
+            print(imageAnchor.referenceImage.name!)
+            
+            /*Init new videoNode constant which finds the file based on its name in the app bundle:
+            */
+            let videoNode = SKVideoNode(fileNamed: "DailyProphet.mp4")
+            
+            //Play the video when the image is recognized:
+            videoNode.play()
+            
+            /*Init new videoScene of type SKScene with appropriate proportions for a 720p video:
+            */
+            let videoScene = SKScene(size: CGSize(width: 720, height: 1280))
+            
+            //Position the videoNode in the middle of the detected image:
+            videoNode.position = CGPoint(x: (videoScene.size.width / 2), y: (videoScene.size.height / 2))
+            
+            //Flip video across the y-axis so it doesn't play upside down:
+            videoNode.yScale = -1.0
+            
+            //Add videoNode to videoScene:
+            videoScene.addChild(videoNode)
+            
+            /*Init new plane using the width and height of the reference image of the imageAnchor:
+            */
+            let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+            
+            /*Assign material of the plane as the video, which will make the video play over the plane:
+            */
+            plane.firstMaterial?.diffuse.contents = videoScene
+            
+            //Init new node on plane with the geometry of the plane created above:
+            let planeNode = SCNNode(geometry: plane)
+            
+            //Rotates the plane by pi / 2 so it's flat on the picture:
+            planeNode.eulerAngles.x = -(.pi / 2)
+            
+            //Add planeNode:
+            node.addChildNode(planeNode)
+    }
+        return node
+}
+    
     
 /*
     // Override to create and configure nodes for anchors added to the view's session.
