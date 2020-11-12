@@ -104,8 +104,8 @@
 				5A7940CA255DAE2500BE8DA6 /* DailyProphet.mp4 */,
 				5A794097255DAD1D00BE8DA6 /* AppDelegate.swift */,
 				5A794099255DAD1D00BE8DA6 /* art.scnassets */,
-				5A79409B255DAD1D00BE8DA6 /* ViewController.swift */,
-				5A79409D255DAD1D00BE8DA6 /* Main.storyboard */,
+				5A7EE2C3255DC26A0074E9D9 /* Controller */,
+				5A7EE2C7255DC2770074E9D9 /* View */,
 				5A7940A0255DAD1F00BE8DA6 /* Assets.xcassets */,
 				5A7940A2255DAD1F00BE8DA6 /* LaunchScreen.storyboard */,
 				5A7940A5255DAD1F00BE8DA6 /* Info.plist */,
@@ -129,6 +129,22 @@
 				5A7940BB255DAD1F00BE8DA6 /* Info.plist */,
 			);
 			path = DailyProphetUITests;
+			sourceTree = "<group>";
+		};
+		5A7EE2C3255DC26A0074E9D9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5A79409B255DAD1D00BE8DA6 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5A7EE2C7255DC2770074E9D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A79409D255DAD1D00BE8DA6 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
