@@ -15,6 +15,7 @@
 		5A7940A4255DAD1F00BE8DA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7940A2255DAD1F00BE8DA6 /* LaunchScreen.storyboard */; };
 		5A7940AF255DAD1F00BE8DA6 /* DailyProphetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7940AE255DAD1F00BE8DA6 /* DailyProphetTests.swift */; };
 		5A7940BA255DAD1F00BE8DA6 /* DailyProphetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7940B9255DAD1F00BE8DA6 /* DailyProphetUITests.swift */; };
+		5A7940CB255DAE2500BE8DA6 /* DailyProphet.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5A7940CA255DAE2500BE8DA6 /* DailyProphet.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5A7940B5255DAD1F00BE8DA6 /* DailyProphetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyProphetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7940B9255DAD1F00BE8DA6 /* DailyProphetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyProphetUITests.swift; sourceTree = "<group>"; };
 		5A7940BB255DAD1F00BE8DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A7940CA255DAE2500BE8DA6 /* DailyProphet.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = DailyProphet.mp4; path = ../../../../../Downloads/DailyProphet.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		5A794096255DAD1D00BE8DA6 /* DailyProphet */ = {
 			isa = PBXGroup;
 			children = (
+				5A7940CA255DAE2500BE8DA6 /* DailyProphet.mp4 */,
 				5A794097255DAD1D00BE8DA6 /* AppDelegate.swift */,
 				5A794099255DAD1D00BE8DA6 /* art.scnassets */,
 				5A79409B255DAD1D00BE8DA6 /* ViewController.swift */,
@@ -233,6 +236,7 @@
 			files = (
 				5A79409A255DAD1D00BE8DA6 /* art.scnassets in Resources */,
 				5A7940A4255DAD1F00BE8DA6 /* LaunchScreen.storyboard in Resources */,
+				5A7940CB255DAE2500BE8DA6 /* DailyProphet.mp4 in Resources */,
 				5A7940A1255DAD1F00BE8DA6 /* Assets.xcassets in Resources */,
 				5A79409F255DAD1D00BE8DA6 /* Main.storyboard in Resources */,
 			);

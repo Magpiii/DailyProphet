@@ -21,12 +21,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
-        
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
-        // Set the scene to the view
-        sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +28,18 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
+        
+        //Specify reference image: 
+        if  let imageToTrack = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: Bundle.main) {
+            /*Set the configuration's detectionImages as the unwrapped imageToTrack (NOTE: this allows the app to track images as well as detect planes):
+            */
+            configuration.detectionImages = imageToTrack
+            
+            //Sets the max amount of images that can be tracked:
+            configuration.maximumNumberOfTrackedImages = 1
+            
+            print("Images successfully added to application.")
+        }
 
         // Run the view's session
         sceneView.session.run(configuration)
